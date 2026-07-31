@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FARMECONOMY International Ltd</title>
+
+<style>
+
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;scroll-behavior:smooth;}
+
+body{
+background:transparent;
+position:relative;
+min-height:100vh;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background-image:url('../images/logo.jpeg');
+background-repeat:no-repeat;
+background-position:center center;
+background-size:95% auto;
+opacity:0.16;
+filter:blur(5px);
+transform:scale(1.06);
+pointer-events:none;
+z-index:0;
+}
+
+body > *{
+position:relative;
+z-index:1;
+}
+
+/* HEADER */
+header{
+position:fixed;
+top:0;
+width:100%;
+background:linear-gradient(90deg,#0b3d2e,#145c45);
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 40px;
+z-index:1000;
+}
+
+.logo{
+font-size:20px;
+font-weight:bold;
+letter-spacing:1px;
+}
+.header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:linear-gradient(90deg,#0b3d2e,#145c45);
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 40px;
+  z-index:1000;
+}
+
+/* LOGO + NAME */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand img{
+  width:60px;
+  height:60px;
+  object-fit:contain;
+  border-radius:8px;
+  background:white;
+  padding:4px;
+}
+
+/* COMPANY NAME */
+.brand h1{
+  font-size:24px;
+  font-weight:bold;
+  margin:0;
+}
+
+/* MENU */
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 10px;
+  font-size:14px;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#ffd700;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .header{
+    flex-direction:column;
+    text-align:center;
+    gap:10px;
+  }
+
+  .brand h1{
+    font-size:18px;
+  }
+}
+
+nav a{
+color:white;
+margin:0 10px;
+text-decoration:none;
+font-size:14px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#ffd700;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.brand{
+    width: 50%;
+    height: 100%;
+    background: #145c46; /* Green */
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+}
+
+nav{
+    width: 50%;
+    height: 100%;
+    background: #c00000; /* Red */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.brand h1{
+    color: white;
+    margin-left: 15px;
+}
+
+#logo{
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+/* HERO SLIDER */
+.hero{
+margin-top:0;
+min-height:100vh;
+position:relative;
+overflow:hidden;
+background:transparent;
+}
+
+.slide{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+opacity:0;
+transition:2s ease-in-out;
+background-size:contain;
+background-position:center center;
+background-repeat:no-repeat;
+background-color:transparent;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+text-align:center;
+}
+
+.slide.active{
+opacity:1;
+}
+
+.hero-text{
+background:rgba(0,0,0,0.5);
+padding:20px;
+border-radius:10px;
+animation:zoom 2s;
+}
+
+@keyframes zoom{
+from{transform:scale(0.8);opacity:0;}
+to{transform:scale(1);opacity:1;}
+}
+
+/* SECTIONS */
+section{
+padding:80px 40px;
+}
+
+.title{
+text-align:center;
+margin-bottom:30px;
+font-size:30px;
+color:#0b3d2e;
+}
+
+/* ABOUT */
+.about{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+align-items:center;
+}
+
+.about img{
+width:100%;
+max-width:500px;
+border-radius:10px;
+}
+#about,
+#products{
+  display:none;
+}
+#contact{
+  display:block;
+  margin-top:50px;
+}
+
+/* PRODUCTS */
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:#f4f4f4;
+padding:15px;
+border-radius:10px;
+transition:0.4s;
+transform:translateY(0);
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:10px;
+}
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#f4f4f4;
+  padding:15px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:scale(1.03);
+}
+
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.card h3{
+  margin-top:10px;
+  color:#0b3d2e;
+}
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:25px; /* space kati ya boxes */
+  padding:20px;
+}
+
+/* PRODUCT BOX */
+.card{
+  background:white;
+  border:1px solid #ddd;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+  transition:0.3s ease;
+}
+
+/* hover effect */
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 6px 18px rgba(0,0,0,0.2);
+}
+
+/* IMAGE */
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  display:block;
+}
+
+/* TEXT AREA */
+.card h3{
+  margin:10px;
+  color:#0b3d2e;
+}
+
+.card p{
+  margin:0 10px 15px 10px;
+  color:#555;
+  font-size:14px;
+}
+
+/* CONTACT */
+.contact{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+input,textarea{
+width:100%;
+padding:10px;
+margin:5px 0;
+}
+
+button{
+background:#0b3d2e;
+color:white;
+padding:10px;
+border:none;
+cursor:pointer;
+}
+
+button:hover{
+background:#145c45;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:12px 15px;
+border-radius:50px;
+font-size:14px;
+text-decoration:none;
+box-shadow:0 0 10px rgba(0,0,0,0.3);
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+background:#0b3d2e;
+color:white;
+margin-top:20px;
+}
+.tabs{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+}
+
+.tabs button{
+  padding:10px 15px;
+  border:none;
+  background:#0b3d2e;
+  color:white;
+  cursor:pointer;
+  border-radius:5px;
+  transition:0.3s;
+}
+
+.tabs button:hover{
+  background:#145c45;
+}
+
+.tab-content{
+  max-width:800px;
+  margin:auto;
+  background:#f4f4f4;
+  padding:20px;
+  border-radius:10px;
+}
+
+/* HIDE ALL TABS */
+.tab{
+  display:none;
+}
+
+/* ACTIVE TAB */
+.tab.active{
+  display:block;
+}
+
+/* CONTACT MAIN */
+.contact{
+  padding:60px 20px;
+  background:#f5f5f5;
+}
+
+/* HEADER */
+.contact-header{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  justify-content:center;
+  margin-bottom:30px;
+}
+
+.contact-header img{
+  width:70px;
+  height:70px;
+  background:white;
+  padding:5px;
+  border-radius:10px;
+}
+
+.contact-header h2{
+  margin:0;
+  color:#0b3d2e;
+}
+
+/* GRID */
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+  gap:20px;
+}
+
+/* CARD */
+.contact-card{
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  text-align:center;
+  box-shadow:0 3px 10px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.contact-card:hover{
+  transform:translateY(-5px);
+}
+
+.contact-card a{
+  display:inline-block;
+  margin-top:10px;
+  padding:8px 15px;
+  background:#0b3d2e;
+  color:white;
+  text-decoration:none;
+  border-radius:20px;
+}
+
+/* SOCIAL */
+.social{
+  text-align:center;
+  margin-top:30px;
+}
+
+.social a{
+  margin:0 10px;
+.contact-card a {
+    display: inline-block;
+    background: #0b6b57;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+}
+
+/* MAP */
+.map{
+  margin-top:30px;
+  border-radius:10px;
+  overflow:hidden;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+
+  <div class="brand">
+    <!-- LOGO (badilisha hapa kuweka picha yako) -->
+    <img src="../images/logo.jpeg" alt="Company Logo" id="logo">
+
+    <!-- COMPANY NAME -->
+    <h1>FARMECONOMY International Ltd</h1>
+  </div>
+
+ <nav>
+  <a href="#" onclick="showSection('home')">Home</a>
+  <a href="#" onclick="showSection('about')">About</a>
+  <a href="#" onclick="showSection('products')">Products</a>
+  <a href="#contact">Contact</a>
+</nav>
+  </div>
+</header>
+
+<!-- HERO SLIDER -->
+<section class="hero" id="home">
+
+<div class="slide slide-1 active" style="background-image:url('../images/slide 2.jpeg')">
+<div class="hero-text">
+<h1>FARMECONOMY International Ltd</h1>
+<p>Uchumi ni kilimo</p>
+</div>
+</div>
+
+<div class="slide" style="background-image:url('../images/slide\ one.jpeg')">
+<div class="hero-text">
+<h1>Modern Agriculture Solutions with Quality seeds</h1>
+<p>High Yield & Trusted Products</p>
+</div>
+</div>
+
+<div class="slide slide-3" style="background-image:url('../images/slide\ 1.jpeg')">
+<div class="hero-text">
+<h1>Let's Grow Together</h1>
+<p>With FARMECONOMY International Ltd</p>
+</div>
+</div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="title">About FARMECONOMY International Ltd</h2>
+
+  <!-- TAB BUTTONS -->
+  <div class="tabs">
+
+    <button class="tab-btn active" onclick="showTab('profile', this)">🌿 Profile</button>
+    <button class="tab-btn" onclick="showTab('values', this)">💎 Values</button>
+    <button class="tab-btn" onclick="showTab('terms', this)">📜 Terms</button>
+
+  </div>
+
+  <!-- CONTENT BOX -->
+  <div class="tab-content">
+
+    <div id="profile" class="tab active">
+      <h3>Company Profile</h3>
+
+      <p>
+        <strong>FARMECONOMY International Ltd</strong> is a well-established agricultural company with over 
+        <strong>10 years of experience</strong> in agribusiness.
+      </p>
+
+      <p>
+        The company specializes in production, importation, exportation, distribution, and sales of high-quality 
+        agricultural products including certified seeds and modern crop nutrition solutions.
+      </p>
+
+      <h4> Core Activities</h4>
+
+      <ul>
+        <li>Seed Production (Hybrid & Improved Seeds)</li>
+        <li>Importation of Agricultural Inputs</li>
+        <li>Exportation of Agricultural Products</li>
+        <li>Distribution Network Across Regions</li>
+        <li>Sales & Marketing</li>
+        <li>Fertilizer Importation & Distribution (Foliar & Granular Fertilizers)</li>
+      </ul>
+    </div>
+
+    <div id="values" class="tab">
+      <h3>Our Values</h3>
+
+      <div class="cardbox">
+        <p>🌱 Integrity & Transparency:
+          We are committed to conducting our business with honesty, fairness, and accountability while maintaining open and clear communication with our customers, partners, and stakeholders.
+        </p>
+        <p>🤝 Customer Commitment: We are dedicated to understanding and meeting the needs of our customers by providing high-quality products, reliable services, and exceptional support.</p>
+        <p>🚜 Agricultural Innovation: We embrace innovation to improve agricultural productivity and sustainability by providing advanced seed varieties, modern farming solutions, and continuously enhancing our products and services.</p>
+        <p>🌍 Sustainability: We are committed to promoting responsible agricultural practices that protect the environment, support farmers, and contribute to long-term food security.</p>
+      </div>
+
+    </div>
+
+    <div id="terms" class="tab">
+      <h3>Sales Terms & Conditions</h3>
+
+      <div class="cardbox">
+        <p>✔ Orders must be confirmed before delivery</p>
+        <p>✔ Payment before or upon delivery</p>
+        <p>✔ No returns after opening product</p>
+        <p>✔ Prices may change without notice</p>
+        <p>✔ Delivery depends on location</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+  </div>
+</section>
+
+
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+<h2 class="title">Our Products</h2>
+<div class="products">
+    <!--product 1-->
+    <div class="card">
+        <img src="../images/sweet pepper.jpeg">
+        <h3>Calfornia wonder</h3>
+        <p>Maturity:55-60 days</p>
+        <p>mild pungent, excellent for long transport, high yielder</p>
+    </div>
+
+    <!--product 2-->
+    <div class="card">
+        <img src="../images/blackbeauty.jpeg">
+        <h3>Black beauty</h3>
+        <p>Maturity:60-65 DAT</p>
+        <p>wider adaptability high yielder</p>
+    </div>
+
+    <!--product 3-->
+    <div class="card">
+        <img src="../images/tengeru white.jpeg">
+        <h3>Tengeru White</h3>
+        <p>Maturity:55-60 days</p>
+        <p>mild pungent, excellent for long transport, high yielder</p>
+    </div>
+
+    <!--product 4-->
+    <div class="card">
+        <img src="../images/cucumber.jpeg">
+        <h3>Cucumber</h3>
+        <p>Maturity:55-60 days</p>
+        <p>mild pungent, excellent for long transport, high yielder</p>
+    </div>
+
+    <!--product 5-->
+    <div class="card">
+        <img src="../images/okra.jpeg">
+        <h3>Okra</h3>
+        <p>Maturity:55-60 days</p>
+        <p>mild pungent, excellent for long transport, high yielder</p>
+    </div>
+
+    <!--product 6-->
+    <div class="card">
+        <img src="../images/chinese.jpeg">
+        <h3>Chinese</h3>
+        <p>Maturity:55-60 days</p>
+        <p>mild pungent, excellent for long transport, high yielder</p>
+    </div>
+
+    <!--product 7-->
+    <div class="card">
+        <img src="../images/spinach.jpeg">
+        <h3>Spinach</h3>
+        <p>Maturity:55-60 days</p>
+        <p>mild pungent, excellent for long transport, high yielder</p>
+    </div>
+
+     <!--product 8-->
+    <div class="card">
+        <img src="../images/carrot.jpeg">
+        <h3>Carrot</h3>
+        <p>Maturity:55-60 days</p>
+        <p>mild pungent, excellent for long transport, high yielder</p>
+    </div>
+
+     <!--product 9-->
+    <div class="card">
+        <img src="../images/copenhagen.jpeg">
+        <h3>Copenhagen</h3>
+        <p>Maturity:55-60 days</p>
+        <p>mild pungent, excellent for long transport, high yielder</p>
+    </div>
+
+ <!--product 10-->
+    <div class="card">
+        <img src="../images/butternut squash.jpeg">
+        <h3>Butternut Squash</h3>
+        <p>Maturity:55-60 days</p>
+        <p>mild pungent, excellent for long transport, high yielder</p>
+    </div>
+
+     <!--product 11-->
+    <div class="card">
+        <img src="../images/db3 eggplant.jpeg">
+        <h3>DB3 Eggplant</h3>
+        <p>Maturity:55-60 days</p>
+        <p>mild pungent, excellent for long transport, high yielder</p>
+    </div>
+
+     <!--product 12-->
+    <div class="card">
+        <img src="../images/long purple (2).jpeg">
+        <h3>Long Purple</h3>
+        <p>Maturity:55-60 days</p>
+        <p>mild pungent, excellent for long transport, high yielder</p>
+    </div>
+
+     <!--product 13-->
+    <div class="card">
+        <img src="../images/beetroot.jpeg">
+        <h3>Beetroot</h3>
+        <p>Maturity:55-60 days</p>
+        <p>mild pungent, excellent for long transport, high yielder</p>
+    </div>
+
+     <!--product 14-->
+    <div class="card">
+        <img src="../images/bwasi.jpeg">
+        <h3>Amaruthus</h3>
+        <p>Maturity:55-60 days</p>
+        <p>mild pungent, excellent for long transport, high yielder</p>
+    </div>
+
+     <!--product 15-->
+    <div class="card">
+        <img src="../images/habanero.jpeg">
+        <h3>Hot pepper Habanero</h3>
+        <p>Maturity:55-60 days</p>
+        <p>mild pungent, excellent for long transport, high yielder</p>
+    </div>
+
+    <!--product 16-->
+    <div class="card">
+        <img src="../images/Tanya.jpeg">
+        <h3>Tomato Tanya</h3>
+        <p>Maturity:55-60 days</p>
+        <p>mild pungent, excellent for long transport, high yielder</p>
+    </div>
+
+    <!--product 17-->
+    <div class="card">
+        <img src="../images/tomato tengeru 97.jpeg">
+        <h3>Tomato Tengeru 97</h3>
+        <p>Maturity:55-60 days</p>
+        <p>mild pungent, excellent for long transport, high yielder</p>
+    </div>
+
+    <!--product 18-->
+    <div class="card">
+        <img src="../images/rio.jpeg">
+        <h3>Tomato Rio-grande</h3>
+        <p>Maturity:55-60 days</p>
+        <p>mild pungent, excellent for long transport, high yielder</p>
+    </div>
+
+    <!--product 19-->
+    <div class="card">
+        <img src="../images/mchicha lishe.jpeg">
+        <h3>Amarathus</h3>
+        <p>Maturity:55-60 days</p>
+        <p>mild pungent, excellent for long transport, high yielder</p>
+    </div>
+
+    <!--product 20-->
+    <div class="card">
+        <img src="../images/mnavu.jpeg">
+        <h3>Blacknight shade</h3>
+        <p>Maturity:55-60 days</p>
+        <p>mild pungent, excellent for long transport, high yielder</p>
+    </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+
+  <!-- HEADER -->
+  <div class="contact-header">
+    <img src="../images/logo.jpeg" alt="Logo">
+    <div>
+      <h2>FARMECONOMY International Ltd</h2>
+      <p>Get in touch with our sales team</p>
+    </div>
+  </div>
+
+  <!-- CONTACT CARDS -->
+  <div class="contact-grid">
+
+    <div class="contact-card">
+      <h3>📞 Call Us</h3>
+      <p>+255 676 366 931</p>
+      <a href="tel:+255676366931">Call Now</a>
+    </div>
+
+   
+ <div class="contact-card">
+  <h3>📧 Email</h3>
+
+  <p>
+    <a href="mailto:info@farmeconomyinternational.com">info@farmeconomyinternational.com</a>
+  </p>
+
+  <p>
+    <a href="mailto:joshua@farmeconomyinternational.com">joshua@farmeconomyinternational.com</a>
+  </p>
+
+  <p>
+    <a href="mailto:finance@farmeconomyinternational.com">finance@farmeconomyinternational.com</a>
+  </p>
+</div>
+
+    <div class="contact-card">
+      <h3>📍 Address</h3>
+      <p>Arusha, Tanzania</p>
+      <p>FARMECONOMY HQ</p>
+    </div>
+
+  </div>
+
+  <!-- SOCIAL MEDIA -->
+  <div class="social">
+    <a href="#">📘 Facebook</a>
+    <div class="contact-card">
+  <h3>📷 Instagram</h3>
+
+  <p>
+    <a href="https://www.instagram.com/farmeconomy_international_ltd/" target="_blank">
+      @farmeconomy_international_ltd
+    </a>
+  </p>
+</div>
+    <a href="#">▶ YouTube</a>
+  </div>
+
+  <!-- MAP -->
+<div class="map">
+
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15931.99682194471!2d36.67397252643462!3d-3.3503250748021247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18371c6d8fd9acb5%3A0x8ea1650ba3c40bb8!2sIlboru%2C%20Arusha!5e0!3m2!1sen!2stz!4v1782733511511!5m2!1sen!2stz" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
+    width="100%"
+    height="300"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy">
+  </iframe>
+
+</div>
+
+</section>
+
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp"
+   href="https://wa.me/255692093247?text=Hello%20FARMECONOMY%20International%20Ltd.%20I%20am%20interested%20in%20your%20agricultural%20products.%20Please%20assist%20me."
+   target="_blank"
+   aria-label="Talk to Our Sales Team on WhatsApp">
+   💬 Talk to Our Sales Team
+</a>
+
+<footer>
+© 2026 FARMECONOMY International Ltd
+</footer>
+
+<script>
+
+/* SLIDER */
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+setInterval(()=>{
+slides[index].classList.remove("active");
+index = (index + 1) % slides.length;
+slides[index].classList.add("active");
+},4000);
+
+/* LOAD PRODUCTS */
+function loadProducts(){
+let products = JSON.parse(localStorage.getItem("products")) || [];
+let box = document.getElementById("productList");
+
+box.innerHTML = "";
+
+products.forEach(p=>{
+box.innerHTML += `
+<div class="card">
+<img src="${p.image}">
+<h3>${p.name}</h3>
+<p>${p.desc}</p>
+</div>
+`;
+});
+}
+
+loadProducts();
+function showTab(tabId){
+
+  // hide all tabs
+  let tabs = document.querySelectorAll(".tab");
+  tabs.forEach(t => t.classList.remove("active"));
+
+  // show selected tab
+  document.getElementById(tabId).classList.add("active");
+}
+function showSection(section){
+
+  // hide only these
+  document.getElementById("about").style.display = "none";
+  document.getElementById("products").style.display = "none";
+  document.querySelector(".hero").style.display = "none";
+
+  // show selected
+  if(section === "home"){
+    document.querySelector(".hero").style.display = "block";
+  }
+
+  if(section === "about"){
+    document.getElementById("about").style.display = "block";
+  }
+
+  if(section === "products"){
+    document.getElementById("products").style.display = "block";
+  }
+
+  // CONTACT stays always visible (no hide needed)
+}
+</script>
+
+</body>
+</html>

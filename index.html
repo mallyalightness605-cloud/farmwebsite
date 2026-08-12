@@ -1955,6 +1955,125 @@ section,
         font-size: 14px !important;
     }
 }
+/* =========================================
+   CENTER SLIDE TEXT - NO BACKGROUND
+========================================= */
+
+.hero-text {
+    position: absolute !important;
+
+    top: 50% !important;
+    left: 50% !important;
+
+    transform: translate(-50%, -50%) !important;
+
+    width: 90% !important;
+    max-width: 800px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: transparent !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+
+    text-align: center !important;
+
+    color: white !important;
+
+    z-index: 20 !important;
+
+    box-shadow: none !important;
+}
+
+
+/* MAIN SLIDE TITLE */
+
+.hero-text h1 {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: white !important;
+
+    font-size: clamp(28px, 6vw, 52px) !important;
+
+    line-height: 1.15 !important;
+
+    text-align: center !important;
+
+    background: transparent !important;
+
+    text-shadow: none !important;
+}
+
+
+/* SLIDE SUBTITLE */
+
+.hero-text p {
+    margin: 10px 0 0 !important;
+    padding: 0 !important;
+
+    color: white !important;
+
+    font-size: clamp(15px, 2.5vw, 24px) !important;
+
+    line-height: 1.4 !important;
+
+    text-align: center !important;
+
+    background: transparent !important;
+
+    text-shadow: none !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .hero-text {
+        top: 50% !important;
+        left: 50% !important;
+
+        transform: translate(-50%, -50%) !important;
+
+        width: 90% !important;
+        max-width: 90% !important;
+
+        padding: 0 !important;
+
+        background: transparent !important;
+    }
+
+    .hero-text h1 {
+        font-size: 30px !important;
+        line-height: 1.15 !important;
+    }
+
+    .hero-text p {
+        font-size: 16px !important;
+        margin-top: 8px !important;
+    }
+}
+
+
+/* SMALL PHONES */
+
+@media (max-width: 400px) {
+
+    .hero-text {
+        width: 92% !important;
+    }
+
+    .hero-text h1 {
+        font-size: 25px !important;
+    }
+
+    .hero-text p {
+        font-size: 14px !important;
+    }
+}
 </style>
 </head>
 

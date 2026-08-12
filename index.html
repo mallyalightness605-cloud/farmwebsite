@@ -1299,6 +1299,229 @@ footer {
         font-size: 14px !important;
     }
 }
+/* =========================================
+   FINAL HERO MOBILE DESIGN
+========================================= */
+
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 80px;
+    overflow: hidden;
+}
+
+/* HERO SLIDES */
+.slide {
+    position: absolute !important;
+
+    top: 80px !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 100% !important;
+    height: calc(100% - 80px) !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+
+    padding: 20px !important;
+
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+/* DARK OVERLAY */
+.slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.28);
+
+    z-index: 1;
+}
+
+/* TEXT BOX */
+.hero-text {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(850px, 90%);
+
+    padding: 25px 30px;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    color: white;
+
+    box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+}
+
+.hero-text h1 {
+    margin: 0;
+
+    font-size: clamp(32px, 5vw, 60px);
+
+    line-height: 1.1;
+
+    color: white;
+
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.hero-text p {
+    margin-top: 15px;
+
+    font-size: clamp(17px, 2.2vw, 26px);
+
+    line-height: 1.4;
+
+    color: white;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 75vh;
+
+        padding-top: 113px;
+    }
+
+    .slide {
+        top: 113px !important;
+
+        height: calc(100% - 113px) !important;
+
+        padding: 15px !important;
+
+        background-size: cover !important;
+
+        background-position: center center !important;
+    }
+
+    .hero-text {
+        width: 88%;
+
+        padding: 20px 16px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(27px, 7vw, 42px);
+
+        line-height: 1.15;
+    }
+
+    .hero-text p {
+        font-size: 17px;
+
+        margin-top: 10px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .hero {
+        min-height: 72vh;
+
+        padding-top: 113px;
+    }
+
+    .slide {
+        top: 113px !important;
+
+        height: calc(100% - 113px) !important;
+
+        padding: 12px !important;
+
+        background-size: cover !important;
+
+        background-position: center center !important;
+    }
+
+    /* darker mobile overlay */
+    .slide::before {
+        background: rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-text {
+        width: 92%;
+
+        max-width: 92%;
+
+        padding: 16px 12px;
+
+        border-radius: 10px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(25px, 8vw, 36px);
+
+        line-height: 1.12;
+    }
+
+    .hero-text p {
+        font-size: 15px;
+
+        line-height: 1.4;
+
+        margin-top: 9px;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+
+    .hero {
+        min-height: 68vh;
+    }
+
+    .slide {
+        top: 113px !important;
+
+        height: calc(100% - 113px) !important;
+    }
+
+    .hero-text {
+        width: 94%;
+
+        padding: 13px 10px;
+    }
+
+    .hero-text h1 {
+        font-size: 23px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+}
 </style>
 </head>
 

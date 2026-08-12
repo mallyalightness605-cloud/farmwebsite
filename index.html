@@ -1655,6 +1655,306 @@ header {
     }
 
 }
+/* =========================================================
+   FINAL WEBSITE FIX
+   HEADER + SLIDES + CENTERED CONTENT
+========================================================= */
+
+/* ---------- STICKY HEADER ---------- */
+
+header {
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100% !important;
+
+    z-index: 99999 !important;
+
+    margin: 0 !important;
+}
+
+
+/* ---------- HERO ---------- */
+
+.hero {
+    width: 100% !important;
+
+    margin: 0 auto !important;
+    padding: 0 !important;
+
+    position: relative !important;
+
+    overflow: hidden !important;
+
+    min-height: 70vh !important;
+}
+
+
+/* ---------- SLIDES ---------- */
+
+.slide {
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    padding: 10px !important;
+    margin: 0 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    /*
+       SHOW THE COMPLETE IMAGE
+       NO CROPPING
+    */
+    background-size: contain !important;
+
+    background-position: center center !important;
+
+    background-repeat: no-repeat !important;
+
+    background-color: transparent !important;
+}
+
+
+.slide.active {
+    opacity: 1 !important;
+}
+
+
+/* ---------- SLIDE WORDS / TEXT ---------- */
+
+.hero-text {
+    position: relative !important;
+
+    z-index: 20 !important;
+
+    width: 90% !important;
+
+    max-width: 750px !important;
+
+    margin: 0 auto !important;
+
+    padding: 12px 15px !important;
+
+    text-align: center !important;
+
+    background: rgba(0, 0, 0, 0.42) !important;
+
+    border-radius: 8px !important;
+
+    color: white !important;
+}
+
+
+.hero-text h1 {
+    margin: 0 !important;
+
+    color: white !important;
+
+    font-size: clamp(26px, 6vw, 50px) !important;
+
+    line-height: 1.15 !important;
+}
+
+
+.hero-text p {
+    margin: 8px 0 0 !important;
+
+    color: white !important;
+
+    font-size: clamp(14px, 2.5vw, 24px) !important;
+
+    line-height: 1.4 !important;
+}
+
+
+/* =========================================================
+   CENTER WEBSITE CONTENT
+========================================================= */
+
+section,
+.about,
+.products,
+.contact,
+.contact-grid,
+.tabs,
+.tab-content,
+.social,
+.map {
+    width: 100% !important;
+
+    max-width: 1200px !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+/* Keep section text centered */
+
+.title,
+.contact-header,
+.social {
+    text-align: center !important;
+}
+
+
+/* PRODUCTS */
+
+.products {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        position: sticky !important;
+
+        top: 0 !important;
+    }
+
+
+    .hero {
+        width: 100% !important;
+
+        min-height: 65vh !important;
+
+        height: 65vh !important;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+    }
+
+
+    .slide {
+        width: 100% !important;
+
+        height: 100% !important;
+
+        inset: 0 !important;
+
+        /*
+           COMPLETE IMAGE
+           NOTHING GETS CUT
+        */
+        background-size: contain !important;
+
+        background-position: center center !important;
+
+        background-repeat: no-repeat !important;
+    }
+
+
+    .hero-text {
+        width: 88% !important;
+
+        max-width: 88% !important;
+
+        padding: 10px !important;
+    }
+
+
+    .hero-text h1 {
+        font-size: 28px !important;
+
+        line-height: 1.15 !important;
+    }
+
+
+    .hero-text p {
+        font-size: 15px !important;
+
+        line-height: 1.35 !important;
+    }
+
+
+    /* CENTER CONTENT ON PHONE */
+
+    section,
+    .about,
+    .products,
+    .contact,
+    .contact-grid,
+    .tabs,
+    .tab-content,
+    .social,
+    .map {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+
+    section {
+        padding-left: 15px !important;
+
+        padding-right: 15px !important;
+    }
+
+
+    .products {
+        padding-left: 10px !important;
+
+        padding-right: 10px !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .hero {
+        min-height: 62vh !important;
+
+        height: 62vh !important;
+    }
+
+
+    .slide {
+        background-size: contain !important;
+
+        background-position: center center !important;
+    }
+
+
+    .hero-text {
+        width: 90% !important;
+
+        max-width: 90% !important;
+
+        padding: 8px !important;
+    }
+
+
+    .hero-text h1 {
+        font-size: 24px !important;
+    }
+
+
+    .hero-text p {
+        font-size: 14px !important;
+    }
+}
 </style>
 </head>
 
